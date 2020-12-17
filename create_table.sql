@@ -1,4 +1,12 @@
-/* This statement creates the table, be sure to substitute the location in Amazon S3 where you store your exported EDR snapshots.  You need to specify a folder, not a specific object in S3 and all objects in this folder will be scanned by Athena when you run a query. Don't forget the trailing / at the end of the path, it will error without it! What we do here is create a table containing all the fields for all the data types to amke things simple, each data type will be exposed in it's own separate view*/
+/* 
+This statement creates the table, be sure to substitute the location in Amazon S3 where you store your exported EDR snapshots.
+
+You need to specify a folder, not a specific object in S3 and all objects in this folder will be scanned by Athena when you run a query. 
+
+Don't forget the trailing / at the end of the path, it will error without it! 
+
+What we do here is create a table containing all the fields for all the data types to amke things simple, each data type will be exposed in it's own separate view
+*/
 
 CREATE EXTERNAL TABLE interceptx_edr.exported_snapshot (
          type STRING,
